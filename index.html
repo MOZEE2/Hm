@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCUMENT P1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Partage de Documents</h1>
+        <p>Faites don de documents.</p>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="fileInput" name="file" required>
+            <button type="submit">envoyer le ici</button>
+        </form>
+        <div id="message"></div>
+        <h2>Documents Disponibles</h2>
+        <div id="fileList">
+            <!-- Les fichiers seront affichés ici -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
