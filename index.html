@@ -2,16 +2,134 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>À Lisette</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Pour Lisette</title>
+  <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    /* Importation de la police */
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+    /* Style général */
+    body {
+      margin: 0;
+      font-family: 'Great Vibes', cursive;
+      overflow-x: hidden;
+    }
+
+    /* Parallaxe */
+    .parallax {
+      background-image: url('image.jpg');
+      height: 100vh;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    /* Superposition pour l'effet sombre */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    /* Conteneur central */
+    .container {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+    }
+
+    /* Titres et paragraphes */
+    h1 {
+      font-size: 5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
+
+    /* Bouton personnalisé */
+    .button {
+      background-color: #ff6f61;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+      font-size: 1.5em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 50px;
+    }
+
+    .button:hover {
+      background-color: #ff856e;
+    }
+
+    /* Message caché */
+    .message-cache {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background-color: #fff5f5;
+      padding: 50px;
+      border-radius: 20px;
+      text-align: center;
+      z-index: 3;
+      transition: transform 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .message-cache p {
+      color: #333;
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    .message-cache.active {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* Musique de fond */
+    audio {
+      display: none;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3em;
+      }
+      p {
+        font-size: 1.5em;
+      }
+      .button {
+        font-size: 1.2em;
+        padding: 10px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
   
   <!-- Musique de fond -->
   <audio id="musique" autoplay loop>
-    <source src="amour.mp3" type="audio/mpeg">
+    <source src="musique.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas la lecture audio.
   </audio>
   
   <!-- Contenu principal -->
@@ -20,18 +138,13 @@
     <div class="container">
       <h1>Lisette,</h1>
       <p>Chaque instant passé avec toi est un trésor que je chéris plus que tout au monde.</p>
-      <button class="button" onclick="revealerMessage()">Oui ?</button>
+      <button class="button" onclick="revealerMessage()">Clique ici</button>
     </div>
   </div>
   
   <!-- Message caché -->
   <div id="message-cache" class="message-cache">
-    <p>Je t'aime plus que les mots ne sauraient l'exprimer. Veux-tu partager cette aventure qu'est la vie avec moi en deuxième année ?? 💍</p>
-    <button class="button" onclick="fermerMessage()">Fermer</button>
+    <p>Je t'aime plus que les mots ne sauraient l'exprimer. Veux-tu partager cette aventure qu'est la vie avec moi ? 💍</p>
   </div>
-
-  <!-- JavaScript -->
-  <script src="script.js"></script>
-
 </body>
 </html>
